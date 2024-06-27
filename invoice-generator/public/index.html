@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container"> 
+        <h1>Invoice Generator</h1> 
+        <form id="invoiceForm">
+            <h2>Seller Details</h2>
+            <input type="text" id="sellerName" placeholder="Seller Name" required>
+            <input type="text" id="sellerAddress" placeholder="Seller Address" required>
+            <input type="text" id="sellerPAN" placeholder="PAN No." required>
+            <input type="text" id="sellerGST" placeholder="GST Registration No." required>
+
+            <h2>Place of Supply</h2>
+            <input type="text" id="placeOfSupply" placeholder="Place of Supply" required>
+
+            <h2>Billing Details</h2>
+            <input type="text" id="billingName" placeholder="Billing Name" required>
+            <input type="text" id="billingAddress" placeholder="Billing Address" required>
+            <input type="text" id="billingStateCode" placeholder="State/UT Code" required>
+
+            <h2>Shipping Details</h2>
+            <input type="text" id="shippingName" placeholder="Shipping Name" required>
+            <input type="text" id="shippingAddress" placeholder="Shipping Address" required>
+            <input type="text" id="shippingStateCode" placeholder="State/UT Code" required>
+
+            <h2>Order Details</h2>
+            <input type="text" id="orderNumber" placeholder="Order Number" required>
+            <input type="date" id="orderDate" placeholder="Order Date" required>
+
+            <h2>Invoice Details</h2>
+            <input type="text" id="invoiceNumber" placeholder="Invoice Number" required>
+            <input type="text" id="invoiceDetails" placeholder="Invoice Details" required>
+            <input type="date" id="invoiceDate" placeholder="Invoice Date" required>
+
+            <h2>Reverse Charge</h2>
+            <select id="reverseCharge" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <h2>Item Details</h2>
+            <div id="items">
+                <div class="item">
+                    <input type="text" placeholder="Description" required>
+                    <input type="number" placeholder="Unit Price" required>
+                    <input type="number" placeholder="Quantity" required>
+                    <input type="number" placeholder="Discount" required>
+                    <input type="number" placeholder="Tax Rate" value="18" required>
+                </div>
+            </div>
+            <button type="button" id="addItem">Add Item</button>
+
+            <h2>Signature</h2>
+            <input type="file" id="signature" accept="image/*" required>
+
+            <button type="submit">Generate Invoice</button>
+        </form>
+
+        <div id="invoice" class="invoice">
+            <!-- Invoice will be generated here -->
+        </div>
+        <button onclick="printInvoice()">Print Invoice</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
